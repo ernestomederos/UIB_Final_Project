@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Coustard&display=swap");
+
+:root {
+  --bg-color: black;
+  --f-color: rgb(164, 164, 164);
+  --hover-color: rgb(215, 215, 215);
+}
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Coustard", serif;
+}
+
+nav {
+  background: var(--bg-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px;
+  color: var(--f-color);
+  transition: all 0.5s;
+  gap: 1em;
+}
+
+img {
+  height: 10em;
+  object-fit: fill;
+  padding: 1em;
+}
+.navbar_links {
+  padding: 3px;
+  border: 0px;
+}
+
+.navbar_links:hover {
+  transform: scale(1.5);
+  color: var(--hover-color);
+  padding: 5px;
+}
+
+div {
+  margin-top: auto;
+  height: 15em;
+  display: grid;
+  place-items: center;
+}
+
+.hero_container {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate360 60s infinite forwards linear;
+}
+.carousel__face {
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.carousel__face:nth-child(1) {
+  background-image: url("./images/blonde-movie-review-2022.jpeg");
+  transform: rotateY(0deg) translateZ(430px);
+}
+.carousel__face:nth-child(2) {
+  background-image: url("./images/blonde_ana_de_armas.jpg");
+  transform: rotateY(40deg) translateZ(450px);
+}
+.carousel__face:nth-child(3) {
+  background-image: url("./images/blonde-cops.jpg");
+  transform: rotateY(80deg) translateZ(470px);
+}
+.carousel__face:nth-child(4) {
+  background-image: url("./images/Ana-de-Armas-como-Marilyn-en-Blonde.webp");
+  transform: rotateY(120deg) translateZ(490px);
+}
+.carousel__face:nth-child(5) {
+  background-image: url("./images/blonde_ana_de_armas-husband.jpg");
+  transform: rotateY(160deg) translateZ(510px);
+}
+.carousel__face:nth-child(6) {
+  background-image: url("./images/BLONDE_STILLS_COLOR.webp");
+  transform: rotateY(200deg) translateZ(490px);
+}
+.carousel__face:nth-child(7) {
+  background-image: url("./images/blonde_ana_de_armas_most-famous-scene.jpg");
+  transform: rotateY(240deg) translateZ(470px);
+}
+.carousel__face:nth-child(8) {
+  background-image: url("./images/ana-de-armas-color.webp");
+  transform: rotateY(280deg) translateZ(450px);
+}
+.carousel__face:nth-child(9) {
+  background-image: url("./images/Blonde_once-more-time-color.webp");
+  transform: rotateY(320deg) translateZ(430px);
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.info {
+  margin: 0;
+}
+
+#topic {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  background: var(--bg-color);
+  height: 10vh;
+  width: 100vw;
+  margin-top: 7em;
+  color: var(--f-color);
+}
+
+.layout {
+  width: 100vw;
+  height: 90vh;
+  padding: 4em;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: [uno] 1fr [dos] 1fr [tres] 1fr [cuatro];
+  grid-template-rows: [uno] 1fr [dos] 1fr [tres] 1fr [cuatro] 1fr [cuatro];
+ 
+}
+
+.syn {
+display: grid;
+width: 100%;
+height: 100%;
+justify-content: space-around;
+font-style: italic;
+text-align: justify;
+}
+
+
+.uno {
+grid-column-start: uno;
+  grid-column-end: dos;
+  grid-row-start: uno;
+  grid-row-end: dos;
+  
+}
+
+.dos {
+  grid-column-start: dos;
+  grid-column-end: tres;
+  grid-row-start: uno;
+  grid-row-end: dos;
+}
+.video_container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.tres {
+  grid-column-start: tres;
+  grid-column-end: cuatro;
+  grid-row-start: uno;
+  grid-row-end: dos;
+}
+
+.cuatro {
+  grid-column-start: uno;
+  grid-column-end: dos;
+  grid-row-start: dos;
+  grid-row-end: tres;
+}
+
+.cinco {
+  grid-column-start: dos;
+  grid-column-end: tres;
+  grid-row-start: dos;
+  grid-row-end: tres;
+}
+
+.seis {
+  grid-column-start: tres;
+  grid-column-end: cuatro;
+  grid-row-start: dos;
+  grid-row-end: tres;
+}
+
+.siete {
+  grid-column-start: uno;
+  grid-column-end: dos;
+  grid-row-start: tres;
+  grid-row-end: cuatro;
+}
+
+.ocho {
+    grid-column-start: dos;
+    grid-column-end: tres;
+    grid-row-start: tres;
+    grid-row-end: cuatro;
+  }
+
+  .nueve {
+    grid-column-start: tres;
+    grid-column-end: cuatro;
+    grid-row-start: tres;
+    grid-row-end: cuatro;
+
+}
