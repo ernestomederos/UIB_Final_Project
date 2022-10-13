@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Coustard&display=swap");
 
 :root {
-  --bg-color: black;
-  --f-color: rgb(164, 164, 164);
-  --hover-color: rgb(215, 215, 215);
+  --primary: #1c1c1c;
+  --secondary: #fd4a4a;
+  --extra: rgb(215, 215, 215);
 }
 
 * {
@@ -13,54 +13,53 @@
   font-family: "Coustard", serif;
 }
 
+/* Navigation Bar */
+
 nav {
-  background: var(--bg-color);
+  background: var(--primary);
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-a {
-  text-decoration: none;
-  font-size: 30px;
-  color: var(--f-color);
-  transition: all 0.5s;
-  gap: 1em;
+/* Logo */
+.navbar_logo {
+  background: url(./images/logo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8em;
+  width: 10em;
 }
 
-img {
-  height: 10em;
-  object-fit: fill;
-  padding: 1em;
+/* Links */
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--secondary);
+  transition: all 0.5s;
 }
 .navbar_links {
   padding: 3px;
   border: 0px;
+  gap: 1em;
 }
-
 .navbar_links:hover {
   transform: scale(1.5);
-  color: var(--hover-color);
-  padding: 5px;
+  color: var(--extra);
 }
 
-div {
-  margin-top: auto;
-  height: 15em;
-  display: grid;
-  place-items: center;
-}
+/* Carousel */
 
-.hero_container {
-  position: relative;
+.carousel_container {
   width: 320px;
-  margin: 100px auto 0 auto;
+  margin: 1em auto 0 auto;
   perspective: 1000px;
 }
 
 .carousel {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
@@ -80,40 +79,42 @@ div {
 
 .carousel__face:nth-child(1) {
   background-image: url("./images/blonde-movie-review-2022.jpeg");
-  transform: rotateY(0deg) translateZ(430px);
+  transform: rotateY(0deg) translateZ(420px);
 }
 .carousel__face:nth-child(2) {
   background-image: url("./images/blonde_ana_de_armas.jpg");
-  transform: rotateY(40deg) translateZ(450px);
+  transform: rotateY(40deg) translateZ(420px);
 }
 .carousel__face:nth-child(3) {
   background-image: url("./images/blonde-cops.jpg");
-  transform: rotateY(80deg) translateZ(470px);
+  transform: rotateY(80deg) translateZ(420px);
 }
 .carousel__face:nth-child(4) {
   background-image: url("./images/Ana-de-Armas-como-Marilyn-en-Blonde.webp");
-  transform: rotateY(120deg) translateZ(490px);
+  transform: rotateY(120deg) translateZ(420px);
 }
 .carousel__face:nth-child(5) {
   background-image: url("./images/blonde_ana_de_armas-husband.jpg");
-  transform: rotateY(160deg) translateZ(510px);
+  transform: rotateY(160deg) translateZ(420px);
 }
 .carousel__face:nth-child(6) {
   background-image: url("./images/BLONDE_STILLS_COLOR.webp");
-  transform: rotateY(200deg) translateZ(490px);
+  transform: rotateY(200deg) translateZ(420px);
 }
 .carousel__face:nth-child(7) {
   background-image: url("./images/blonde_ana_de_armas_most-famous-scene.jpg");
-  transform: rotateY(240deg) translateZ(470px);
+  transform: rotateY(240deg) translateZ(420px);
 }
 .carousel__face:nth-child(8) {
   background-image: url("./images/ana-de-armas-color.webp");
-  transform: rotateY(280deg) translateZ(450px);
+  transform: rotateY(280deg) translateZ(420px);
 }
 .carousel__face:nth-child(9) {
   background-image: url("./images/Blonde_once-more-time-color.webp");
-  transform: rotateY(320deg) translateZ(430px);
+  transform: rotateY(320deg) translateZ(420px);
 }
+
+/* Carousel animation */
 
 @keyframes rotate360 {
   from {
@@ -124,50 +125,42 @@ div {
   }
 }
 
-.info {
-  margin: 0;
-}
+/* Layouting */
 
-#topic {
-  margin: 0;
+#synopsis-id {
   padding: 0;
-  text-align: center;
   display: grid;
   align-items: center;
-  background: var(--bg-color);
+  text-align: center;
+  background: var(--primary);
   height: 10vh;
-  width: 100vw;
-  margin-top: 7em;
-  color: var(--f-color);
+  margin-top: 17em;
+  color: var(--secondary);
 }
 
 .layout {
-  width: 100vw;
-  height: 90vh;
-  padding: 4em;
+  padding: 1em;
   display: grid;
-  gap: 2em;
+  gap: 0.5em;
   grid-template-columns: [uno] 1fr [dos] 1fr [tres] 1fr [cuatro];
-  grid-template-rows: [uno] 1fr [dos] 1fr [tres] 1fr [cuatro] 1fr [cuatro];
- 
+  grid-template-rows: [uno] 1fr [dos] 1fr [tres] 1fr [cuatro];
 }
 
 .syn {
-display: grid;
-width: 100%;
-height: 100%;
-justify-content: space-around;
-font-style: italic;
-text-align: justify;
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+  font-style: italic;
+  text-align: justify;
+  padding: 1em;
 }
 
-
 .uno {
-grid-column-start: uno;
+  grid-column-start: uno;
   grid-column-end: dos;
   grid-row-start: uno;
   grid-row-end: dos;
-  
+  font-size: 18px;
 }
 
 .dos {
@@ -177,11 +170,8 @@ grid-column-start: uno;
   grid-row-end: dos;
 }
 .video_container {
-  display: grid;
   width: 100%;
   height: 100%;
-  align-items: center;
-  justify-content: center;
 }
 
 .tres {
@@ -190,12 +180,30 @@ grid-column-start: uno;
   grid-row-start: uno;
   grid-row-end: dos;
 }
+.tres h2 {
+  margin: 0.2em;
+  padding: 1em;
+  background-color: #fd4a4a;
+  color: white;
+}
+.tres p {
+  font-size: 18px;
+}
+
+.place-holder-header {
+  color: var(--secondary);
+  height: 6em;
+}
 
 .cuatro {
   grid-column-start: uno;
   grid-column-end: dos;
   grid-row-start: dos;
   grid-row-end: tres;
+  background: #fd4a4a;
+  color: white;
+  font-size: 17px;
+  height: 21em;
 }
 
 .cinco {
@@ -203,6 +211,9 @@ grid-column-start: uno;
   grid-column-end: tres;
   grid-row-start: dos;
   grid-row-end: tres;
+}
+.cinco p {
+  font-size: 18px;
 }
 
 .seis {
@@ -217,19 +228,250 @@ grid-column-start: uno;
   grid-column-end: dos;
   grid-row-start: tres;
   grid-row-end: cuatro;
+  font-size: 17px;
 }
 
 .ocho {
-    grid-column-start: dos;
-    grid-column-end: tres;
-    grid-row-start: tres;
-    grid-row-end: cuatro;
-  }
+  grid-column-start: dos;
+  grid-column-end: tres;
+  grid-row-start: tres;
+  grid-row-end: cuatro;
+}
 
-  .nueve {
-    grid-column-start: tres;
-    grid-column-end: cuatro;
-    grid-row-start: tres;
-    grid-row-end: cuatro;
+.ocho p {
+  font-size: 17px;
+}
 
+.nueve {
+  grid-column-start: tres;
+  grid-column-end: cuatro;
+  grid-row-start: tres;
+  grid-row-end: cuatro;
+}
+
+.nueve p {
+  font-size: 25px;
+  font-weight: bold;
+  background: var(--secondary);
+  color: white;
+  padding: 1em;
+  height: 8em;
+}
+
+/* Video Animation called "Norma" */
+
+.norma {
+  position: relative;
+}
+
+header {
+  height: 20em;
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header video {
+  width: 50vw;
+  height: 19em;
+}
+
+svg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 95%;
+}
+
+svg text {
+  font-family: "Coustard", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 33px;
+}
+
+svg rect {
+  fill: white;
+}
+svg > rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}
+
+/* Text on a picture */
+
+.norma_history {
+  margin-top: 3em;
+  width: 100%;
+  height: 32em;
+  background: url(./images/sz.1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  padding: 3em;
+  text-align: justify;
+  gap: 1.5em;
+  grid-template-columns: [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five];
+  grid-template-rows: [one] 1fr [two];
+}
+
+.image-text {
+  background: rgba(41, 41, 41, 0.377);
+}
+
+/* Movies cards */
+
+.final-header {
+  padding: 5em;
+  text-align: center;
+  color: #fd4a4a;
+}
+
+.movies_container {
+  margin-top: 2em;
+  background: var(--secondary);
+  color: white;
+  height: 26em;
+  width: 100%;
+  padding: 5em;
+  gap: 0.5em;
+  display: grid;
+  grid-template-columns: [one] 1fr [two] 1fr [three] 1fr [four] 1fr [five] 1fr [six] 1fr [seven];
+  grid-template-rows: [one] 1fr [two];
+}
+
+.cards {
+  width: 13em;
+  height: 13em;
+  border-radius: 50%;
+  transition: all 0.5s;
+  position: relative;
+  
+}
+
+.cards:hover {
+  transform: scale(1.3);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  /* transform: translateY(-2px); */
+}
+
+.one {
+  background: url(./images/91EBd4HFNkL._SL1500_.jpg);
+  background-size: 108%;
+  background-position: center;
+}
+.one h3 {
+  position: absolute;
+  top: 12em;
+  text-align: center;
+ }
+
+.two {
+  background: url(./images/some_like_it_hot.jpg);
+  background-size: 103%;
+  background-position: center;
+}
+.two h3 {
+  position: absolute;
+  top: 12em;
+  text-align: center;
+ }
+.three {
+  background: url(./images/the_misfits.jpg);
+  background-size: 103%;
+  background-position: center;
+}
+.three h3 {
+  position: absolute;
+  top: 12em;
+  text-align: center;
+ }
+.four {
+  background: url(./images/dont-bother-to-knock.jpg);
+  background-size: 110%;
+  background-position: bottom;
+  
+}
+.four h3 {
+  position: absolute;
+  top: 12em;
+  text-align: center;
+ }
+.five {
+  background: url(./images/niagara.jpg);
+  background-size: 100%;
+  background-position: bottom;
+  
+}
+.five h3 {
+  position: absolute;
+  top: 12em;
+  text-align: center;
+ }
+.six {
+  background: url(./images/bus-stop.jpg);
+  background-size: 105%;
+  background-position: center;
+}
+.six h3 {
+  position: absolute;
+  top: 12em;
+  text-align: center;
+ }
+
+
+/* Newsletter Form */
+
+.formulario {
+  display: grid;
+  place-items: center;
+  padding: 5em;
+  height: 20em;
+}
+
+input {
+  height: 3em;
+  width: 30vw;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 0.2em;
+  margin: 1em;
+  border: 3px solid var(--secondary);
+  border-radius: 7px;
+  transition: all 1s;
+}
+
+input:focus {
+  background: rgba(248, 90, 90, 0.349);
+  color: var(--primary);  
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+button {
+  height: 3em;
+  width: 7em;
+  background: var(--secondary);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 3px solid var(--primary);
+  transition: all 0.3s;
+}
+
+/* Button hover animation */
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
 }
